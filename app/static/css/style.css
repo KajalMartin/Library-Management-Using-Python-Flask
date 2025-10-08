@@ -1,0 +1,639 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root{
+    --primary: #6a11cb;
+    --secondary: #2575fc;
+    --accent: #ff6bcb;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --success: #28a745;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --gray: #6c757d;
+    --light-gray: #e9ecef;
+}
+body {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: var(--dark);
+    min-height: 100vh;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo i {
+    font-size: 28px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 5px 0;
+    position: relative;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent);
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+}
+
+.user-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background: white;
+    color: var(--primary);
+}
+
+.btn-primary:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--primary);
+}
+
+.btn-large {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.hero-buttons .btn {
+    min-width: 180px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+}
+
+/* Features Section */
+.features {
+    padding: 80px 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    margin: 40px 0;
+}
+
+.section-title {
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    color: white;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: var(--accent);
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Login Page Styles */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.login-card .logo {
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.form-toggle {
+    display: flex;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    margin-bottom: 30px;
+    padding: 5px;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    color: white;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.toggle-btn.active {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form {
+    display: none;
+}
+
+.form.active {
+    display: block;
+}
+
+.form h2 {
+    color: white;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 20px 15px 50px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.input-group input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+.options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    color: white;
+    font-size: 14px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 8px;
+    accent-color: white;
+}
+
+.forgot-password {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+.register-link, .login-link {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    font-size: 14px;
+}
+
+.register-link a, .login-link a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-link a:hover, .login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    padding: 40px 0;
+    margin-top: 80px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-column h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-column a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Forgot Password Page Styles */
+    /* .forgot-password-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    .forgot-password-container {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .forgot-password-card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .forgot-password-card .logo {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .form-description {
+        color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        margin-bottom: 25px;
+        line-height: 1.5;
+        font-size: 14px;
+    }
+
+    .form {
+        display: none;
+    }
+
+    .form.active {
+        display: block;
+    }
+
+    .form h2 {
+        color: white;
+        margin-bottom: 15px;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .input-group i {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 15px 20px 15px 50px;
+        border: none;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 30px;
+        color: white;
+        font-size: 16px;
+        outline: none;
+        transition: all 0.3s ease;
+    }
+
+    .input-group input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .input-group input:focus {
+        background: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+    }
+
+    .back-to-login {
+        text-align: center;
+        margin-top: 25px;
+    }
+
+    .back-to-login a {
+        color: white;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        transition: color 0.3s ease;
+    }
+
+    .back-to-login a:hover {
+        color: #e0e0e0;
+        text-decoration: underline;
+    }
+
+    /* Password Strength Indicator */
+    /* .password-strength {
+        margin-bottom: 20px;
+    }
+
+    .strength-bar {
+        width: 100%;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+        overflow: hidden;
+        margin-bottom: 5px;
+    }
+
+    .strength-fill {
+        height: 100%;
+        width: 0%;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    .strength-text {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 12px;
+        display: block;
+        text-align: center;
+    } */
+
+    /* Password Match Indicator */
+    /* .password-match {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--success);
+        font-size: 14px;
+        margin-bottom: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .password-match.show {
+        opacity: 1;
+    } */
+
+    /* Success Message */
+    /* .success-message {
+        display: none;
+        text-align: center;
+        color: white;
+    }
+
+    .success-message.active {
+        display: block;
+    }
+
+    .success-icon {
+        font-size: 60px;
+        color: var(--success);
+        margin-bottom: 20px;
+    }
+
+    .success-message h3 {
+        margin-bottom: 15px;
+        font-size: 24px;
+    }
+
+    .success-message p {
+        margin-bottom: 25px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .success-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .resend-text {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .resend-text a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .resend-text a:hover {
+        text-decoration: underline;
+    } */
+
+    /* Responsive Design */
+    /* @media (max-width: 480px) {
+        .forgot-password-card {
+            padding: 30px 20px;
+        }
+        
+        .form h2 {
+            font-size: 20px;
+        }
+        
+        .input-group input {
+            padding: 12px 15px 12px 45px;
+        }
+    } */

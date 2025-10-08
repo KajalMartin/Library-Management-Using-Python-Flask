@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}Libapp | Forgot Password{% endblock %}
+
+{% block content %}
+<div class="forgot-password-page">
+    <div class="forgot-password-container">
+        <div class="forgot-password-card">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span>LibraryHub</span>
+            </div>
+
+            <div class="form-container">
+                <!-- Forgot Password Form -->
+                <form class="form active" id="forgot-password-form">
+                    <h2>Reset Your Password</h2>
+                    <p class="form-description">Enter your email address and we'll send you a link to reset your password.</p>
+                    
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">Send Reset Link</button>
+                    
+                    <div class="back-to-login">
+                        <a href="{{url_for('login')}}"><i class="fas fa-arrow-left"></i> Back to Login</a>
+                    </div>
+                </form>
+
+                <!-- Reset Password Form (hidden initially) -->
+                <form class="form" id="reset-password-form">
+                    <h2>Create New Password</h2>
+                    <p class="form-description">Your new password must be different from previously used passwords.</p>
+                    
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="New Password" required id="new-password">
+                    </div>
+                    
+                    <div class="password-strength">
+                        <div class="strength-bar">
+                            <div class="strength-fill" id="strength-fill"></div>
+                        </div>
+                        <span class="strength-text" id="strength-text">Password strength</span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Confirm New Password" required id="confirm-password">
+                    </div>
+                    
+                    <div class="password-match" id="password-match">
+                        <i class="fas fa-check"></i>
+                        <span>Passwords match</span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full" id="reset-btn" disabled>Reset Password</button>
+                    
+                    <div class="back-to-login">
+                        <a href="{{url_for('login')}}"><i class="fas fa-arrow-left"></i> Back to Login</a>
+                    </div>
+                </form>
+
+                <!-- Success Message (hidden initially) -->
+                <div class="success-message" id="success-message">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Email Sent!</h3>
+                    <p>We've sent a password reset link to your email address. Please check your inbox and follow the instructions.</p>
+                    <div class="success-actions">
+                        <a href="{{url_for('login')}}" class="btn btn-primary">Return to Login</a>
+                        <p class="resend-text">Didn't receive the email? <a href="#" id="resend-link">Resend</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../static/js/script.js" ></script>
+{% endblock %}

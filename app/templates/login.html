@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}Libapp | Login Page{% endblock %}
+
+{% block content %}
+        <div class="login-page">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="logo">
+                    <i class="fas fa-book-open"></i>
+                    <span>LibraryHub</span>
+                </div>
+
+                <div class="form-toggle">
+                    <button class="toggle-btn active" id="login-toggle">Login</button>
+                    <button class="toggle-btn" id="register-toggle">Register</button>
+                </div>
+
+                <div class="form-container">
+                    <!-- Login Form -->
+                    <form class="form active" id="login-form">
+                        <h2>Welcome Back</h2>
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Username or Email" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Password" required>
+                        </div>
+                        <div class="options">
+                            <div class="remember-me">
+                                <input type="checkbox" id="remember">
+                                <label for="remember">Remember me</label>
+                            </div>
+                            <a href="{{url_for('auth.fg_pass')}}" class="forgot-password">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Login</button>
+                        
+                        <div class="register-link">
+                            Don't have an account? <a href="#" id="register-link">Register</a>
+                        </div>
+                    </form>
+
+                    <!-- Register Form -->
+                    <form class="form" id="register-form">
+                        <h2>Create Account</h2>
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Full Name" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Password" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Confirm Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Register</button>
+                        <div class="login-link">
+                            Already have an account? <a href="#" id="login-link">Login</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <script src="../static/js/script.js"></script>
+{% endblock %}
